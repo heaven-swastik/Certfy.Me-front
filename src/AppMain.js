@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Download, Upload, Loader, X, CheckCircle, Search, ChevronDown, Move, Zap, FileText } from 'lucide-react';
+import { Download, Upload, Loader, X, CheckCircle, Search, ChevronDown, Move } from 'lucide-react';
 import JSZip from 'jszip';
 
 // Static Font List with Categories
