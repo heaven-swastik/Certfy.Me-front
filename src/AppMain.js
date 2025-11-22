@@ -140,11 +140,13 @@ const DragText = ({ containerRef, onPositionChange, textStyles, fontFamily }) =>
         return { x: 0, y: 0 };
     }, [containerRef, position]);
 
-    useEffect(() => {
-        if (containerRef.current && !isDragging) {
-            onPositionChange(position.x, position.y);
-        }
-    }, [containerRef.current, onPositionChange, position.x, position.y, isDragging]);
+useEffect(() => {
+    if (containerRef.current && !isDragging) {
+        onPositionChange(position.x, position.y);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [position.x, position.y, isDragging]);
+
 
     const handleMouseDown = (e) => {
         e.preventDefault();
