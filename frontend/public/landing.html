@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certfy.Me - Certificate Generation Manifesto</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // Using Bebas Neue for aggressive headings, Space Mono for utility/body text
+                        'heading': ['Bebas Neue', 'sans-serif'],
+                        'mono': ['Space Mono', 'monospace'],
+                    },
+                    colors: {
+                        // Custom Palette
+                        'purpose-primary': '#C89D37', // Metallic Gold
+                        'purpose-secondary': '#3A3A3A', // Charcoal Black
+                        'purpose-accent': '#E6D8AD', // Soft Gold
+                        'purpose-background': '#FBFAF5', // Light Cream/Background
+                        'purpose-surface': '#FFFFFF', // Card Background
+                        'text-primary': '#1A1A1A',
+                        'text-secondary': '#4B4B4B',
+                        // Specific colors for the brand name
+                        'certfy-color': '#3A3A3A', // Charcoal Black
+                        'me-color': '#C89D37', // Metallic Gold
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Global Styles */
+        body {
+            background-color: #FBFAF5;
+            color: #1A1A1A;
+            font-family: 'Space Mono', monospace;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewport="0 0 100 100" style="fill:none;stroke:#C89D37;stroke-width:2;transform:rotate(45deg);"><circle cx="50" cy="50" r="10"/></svg>') 15 15, auto;
+        }
+
+        /* Neo-Brutalism Button Style - High Contrast & Shadow */
+        .brutal-btn {
+            background-color: #C89D37; /* Gold */
+            color: #1A1A1A; /* Black Text */
+            border: 3px solid #1A1A1A;
+            box-shadow: 6px 6px 0 0 #3A3A3A; /* Charcoal Shadow */
+            transition: all 0.1s ease-in-out;
+            text-shadow: 1px 1px 0 #E6D8AD;
+        }
+        .brutal-btn:hover {
+            box-shadow: 3px 3px 0 0 #3A3A3A;
+            transform: translate(3px, 3px);
+            background-color: #E6D8AD; /* Lighter Gold on hover */
+        }
+        .brutal-btn:active {
+            box-shadow: none;
+            transform: translate(6px, 6px);
+        }
+
+        /* Card Style - Hard Edges and Outline */
+        .brutal-card {
+            border: 3px solid #1A1A1A;
+            background-color: #FFFFFF;
+            box-shadow: 8px 8px 0 0 #E6D8AD; /* Soft Gold offset shadow */
+            transition: all 0.3s;
+        }
+        .brutal-card:hover {
+            box-shadow: 12px 12px 0 0 #C89D37; /* Metallic Gold shadow on hover */
+            transform: translate(-4px, -4px);
+        }
+
+        /* Animated Highlight Bar */
+        .highlight-bar {
+            height: 8px;
+            background-color: #3A3A3A;
+            overflow: hidden;
+        }
+        .highlight-bar::after {
+            content: '';
+            display: block;
+            height: 100%;
+            width: 50%;
+            background-color: #C89D37; /* Gold fill */
+            animation: move-highlight 2s infinite linear;
+        }
+        @keyframes move-highlight {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+
+        /* Section Headings */
+        .brutal-heading {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0 #E6D8AD;
+        }
+        /* Custom Brutalist Divider */
+        .brutal-divider {
+            height: 4px;
+            background: repeating-linear-gradient(
+                45deg,
+                #3A3A3A,
+                #3A3A3A 10px,
+                #C89D37 10px,
+                #C89D37 20px
+            );
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Navigation (Fixed) -->
+    <header class="sticky top-0 z-20 bg-purpose-background border-b-4 border-purpose-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <a href="#" class="text-4xl font-heading tracking-widest leading-none">
+                <span class="text-certfy-color">CERTFY</span><span class="text-me-color text-5xl">.ME</span>
+            </a>
+            <a href="/" class="brutal-btn px-6 py-2 text-lg font-bold hidden sm:block">
+                START GENERATION &gt;&gt;
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section: No Auth, High Impact -->
+    <section class="py-20 lg:pt-32 lg:pb-24 bg-purpose-background relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- Animated Bar Divider -->
+            <div class="highlight-bar w-full max-w-2xl mx-auto mb-10 rounded-full"></div>
+
+            <h1 class="text-6xl sm:text-8xl lg:text-[10rem] brutal-heading text-text-primary mb-6 leading-none">
+                <span class="block text-purpose-secondary -mb-4 lg:-mb-8">THE BATCH</span>
+                <span class="text-purpose-primary block">GENERATION</span>
+                REVOLUTION
+            </h1>
+            
+            <p class="text-xl text-text-secondary max-w-5xl mx-auto mb-10 font-mono">
+                **Certfy.Me** is not just a tool; it's an open-source manifesto against complexity. Generate thousands of custom PDFs or PNGs faster than you can pour a cup of coffee. Zero setup. Zero cost. Just instant, verifiable certification.
+            </p>
+
+            <!-- Primary CTA -->
+            <a href="/" class="brutal-btn inline-flex items-center justify-center px-10 py-5 text-2xl font-bold rounded-none shadow-2xl">
+                SECURE YOUR BATCH NOW (FREE TIER)
+                <svg class="h-6 w-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+
+            <!-- Open Source/No Auth Tag -->
+            <div class="mt-12 p-4 inline-block bg-purpose-secondary text-purpose-accent border-4 border-purpose-primary text-sm font-mono tracking-wider">
+                NO LOGIN REQUIRED // OPEN SOURCE // BATCH PROCESSING MAXIMIZED
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="brutal-divider w-full"></div>
+
+    <!-- How It Works Section: 3-Step Process -->
+    <section class="py-20 lg:py-28 bg-purpose-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl sm:text-6xl brutal-heading text-center text-purpose-secondary mb-4">
+                HOW IT WORKS: THE 3-STEP PROTOCOL
+            </h2>
+            <p class="text-center text-lg text-text-secondary max-w-3xl mx-auto mb-16 font-mono">
+                Maximum output, minimal effort. This is the only sequence you need to know.
+                
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Step 1 -->
+                <div class="brutal-card p-6 md:p-8 rounded-none text-center transform hover:scale-105 transition duration-300">
+                    <div class="text-7xl mb-4 text-purpose-primary font-heading tracking-widest leading-none">
+                        01
+                    </div>
+                    <h3 class="text-3xl font-bold text-text-primary mb-3 font-heading">
+                        TEMPLATE INJECTION
+                    </h3>
+                    <p class="text-text-secondary text-base leading-relaxed font-mono mt-4">
+                        Upload your high-resolution base template (PNG or JPG). The editor transforms it into a dynamic SVG canvas, preserving clarity.
+                    </p>
+                    <div class="mt-6 p-2 bg-purpose-accent text-purpose-secondary font-bold text-sm border-t-2 border-purpose-secondary">
+                        FILE SUPPORT: PNG, JPG, JPEG
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="brutal-card p-6 md:p-8 rounded-none text-center transform hover:scale-105 transition duration-300">
+                    <div class="text-7xl mb-4 text-purpose-primary font-heading tracking-widest leading-none">
+                        02
+                    </div>
+                    <h3 class="text-3xl font-bold text-text-primary mb-3 font-heading">
+                        DATA MAPPING: PRECISION
+                    </h3>
+                    <p class="text-text-secondary text-base leading-relaxed font-mono mt-4">
+                        Upload your CSV roster. Visually map your columns (Name, Date, ID) to specific coordinates on the template. Control font, size, and color.
+                    </p>
+                    <div class="mt-6 p-2 bg-purpose-accent text-purpose-secondary font-bold text-sm border-t-2 border-purpose-secondary">
+                        DATA INPUT: CSV (Comma Separated)
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="brutal-card p-6 md:p-8 rounded-none text-center transform hover:scale-105 transition duration-300">
+                    <div class="text-7xl mb-4 text-purpose-primary font-heading tracking-widest leading-none">
+                        03
+                    </div>
+                    <h3 class="text-3xl font-bold text-text-primary mb-3 font-heading">
+                        MASS PRODUCTION & DEPLOY
+                    </h3>
+                    <p class="text-text-secondary text-base leading-relaxed font-mono mt-4">
+                        Execute the batch. Our serverless architecture spins up, renders every single certificate, and packages them into a single, high-speed ZIP download.
+                    </p>
+                    <div class="mt-6 p-2 bg-purpose-accent text-purpose-secondary font-bold text-sm border-t-2 border-purpose-secondary">
+                        OUTPUT FORMATS: PNG, PDF
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="brutal-divider w-full"></div>
+
+    <!-- Features Section: The Crucial Difference -->
+    <section class="py-20 lg:py-28 bg-purpose-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl sm:text-6xl brutal-heading text-center text-purpose-secondary mb-4">
+                WHY CERTFY<span class="text-purpose-primary">.ME</span>?
+            </h2>
+            <p class="text-center text-lg text-text-secondary max-w-4xl mx-auto mb-16 font-mono">
+                We eliminated the bottlenecks that kill productivity. This is not subscription bloat; this is performance engineering.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Feature 1: Speed -->
+                <div class="brutal-card p-5 bg-purpose-surface text-center">
+                    <p class="text-5xl text-purpose-primary mb-2 font-heading">SPEED</p>
+                    <p class="text-lg font-bold text-text-primary font-heading">THE 1000-UNIT TEST</p>
+                    <p class="text-sm text-text-secondary mt-1 font-mono">Processes 1,000 certificates faster than traditional cloud solutions due to optimized SVG-to-PNG rendering pipelines (Sharp.js).</p>
+                </div>
+
+                <!-- Feature 2: Security -->
+                <div class="brutal-card p-5 bg-purpose-surface text-center">
+                    <p class="text-5xl text-purpose-primary mb-2 font-heading">SECURITY</p>
+                    <p class="text-lg font-bold text-text-primary font-heading">ZERO DATA RESIDUE</p>
+                    <p class="text-sm text-text-secondary mt-1 font-mono">All uploaded data (templates & CSVs) are wiped from the server immediately after generation. No persistent storage. Period.</p>
+                </div>
+
+                <!-- Feature 3: Customization -->
+                <div class="brutal-card p-5 bg-purpose-surface text-center">
+                    <p class="text-5xl text-purpose-primary mb-2 font-heading">CONTROL</p>
+                    <p class="text-lg font-bold text-text-primary font-heading">PIXEL-PERFECT PLACEMENT</p>
+                    <p class="text-sm text-text-secondary mt-1 font-mono">Drag-and-drop interface with live coordinate readouts for text blocks. What you see is precisely what you get.</p>
+                </div>
+
+                <!-- Feature 4: Cost -->
+                <div class="brutal-card p-5 bg-purpose-surface text-center">
+                    <p class="text-5xl text-purpose-primary mb-2 font-heading">COST</p>
+                    <p class="text-lg font-bold text-text-primary font-heading">AGAINST THE PAYWALL</p>
+                    <p class="text-sm text-text-secondary mt-1 font-mono">Open source and free to use. We don't charge for volume. Scale your events without fear of surprise invoices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance/Tech Stack Section -->
+    <section class="bg-purpose-secondary py-20 lg:py-28 border-t-4 border-b-4 border-purpose-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl sm:text-6xl brutal-heading text-center text-purpose-accent mb-4">
+                UNDER THE HOOD: ZERO-FRICTION ARCHITECTURE
+            </h2>
+            <p class="text-center text-lg text-purpose-accent max-w-4xl mx-auto mb-16 font-mono">
+                We chose tools built for speed and reliability, not monetization. Performance is a feature, not a byproduct.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Tech Stack Column -->
+                <div class="bg-text-primary p-6 brutal-card !shadow-none !bg-purpose-secondary">
+                    <h3 class="text-3xl font-bold font-heading text-purpose-primary mb-4 border-b-2 border-purpose-accent pb-2">CORE ENGINE STACK</h3>
+                    <ul class="space-y-4 text-purpose-accent font-mono text-sm tracking-wide">
+                        <li class="p-3 border-b border-purpose-secondary/50 bg-purpose-secondary hover:bg-purpose-secondary/80 brutal-card">
+                            <span class="text-purpose-primary font-bold">NODE.JS / EXPRESS:</span> Microservices framework for handling high-concurrency requests.
+                        </li>
+                        <li class="p-3 border-b border-purpose-secondary/50 bg-purpose-secondary hover:bg-purpose-secondary/80 brutal-card">
+                            <span class="text-purpose-primary font-bold">SHARP.JS:</span> Lightning-fast image processing library. Converts dynamic SVGs (text merged with template) into high-res PNG/PDFs.
+                        </li>
+                        <li class="p-3 border-b border-purpose-secondary/50 bg-purpose-secondary hover:bg-purpose-secondary/80 brutal-card">
+                            <span class="text-purpose-primary font-bold">ARCHIVER:</span> Efficient streaming ZIP compression to bundle thousands of files instantly without exhausting memory.
+                        </li>
+                        <li class="p-3 bg-purpose-secondary hover:bg-purpose-secondary/80 brutal-card">
+                            <span class="text-purpose-primary font-bold">REACT & TAILWIND:</span> Front-end designed for accessibility and speed; minimal DOM manipulation for a smooth mapping experience.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Live Stats Mockup -->
+                <div class="bg-text-primary p-6 brutal-card">
+                    <h3 class="text-3xl font-bold font-heading text-purpose-secondary mb-4 border-b-2 border-purpose-primary pb-2">PERFORMANCE REPORT (LIVE)</h3>
+                    <div class="space-y-4 font-mono text-text-primary text-base">
+                        <div class="flex justify-between items-center brutal-card p-3">
+                            <span class="font-bold text-lg">BATCH 1000 CERTIFICATES:</span>
+                            <span class="text-2xl text-purpose-primary font-heading">~3.1s</span>
+                        </div>
+                        <div class="flex justify-between items-center brutal-card p-3">
+                            <span class="font-bold text-lg">AVERAGE RENDER TIME PER UNIT:</span>
+                            <span class="text-2xl text-purpose-primary font-heading">3.1ms</span>
+                        </div>
+                        <div class="flex justify-between items-center brutal-card p-3">
+                            <span class="font-bold text-lg">TOTAL BATCHES EXECUTED (YTD):</span>
+                            <span class="text-2xl text-purpose-primary font-heading">18,945</span>
+                        </div>
+                        <div class="text-xs text-text-secondary mt-4 p-2 border-t-2 border-purpose-accent">
+                            <span class="font-bold">NOTE:</span> Performance is highly dependent on server allocation and template complexity. Figures represent median AWS Lambda execution times.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section: Trusted Voices -->
+    <section class="py-20 lg:py-28 bg-purpose-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl sm:text-6xl brutal-heading text-center text-purpose-secondary mb-16">
+                TRUSTED VOICES: THE OUTPUT SPEAKS
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="brutal-card p-8 bg-purpose-surface">
+                    <p class="text-3xl mb-4 text-purpose-secondary font-heading leading-tight italic">
+                        "The time savings are unquantifiable. We eliminated a 5-hour manual task that used to cost us hundreds in contractor fees. Certfy.Me is the definition of efficiency."
+                    </p>
+                    <div class="border-t-2 border-purpose-primary mt-4 pt-4 text-sm font-mono text-text-secondary">
+                        <span class="font-bold text-text-primary">AVA L.</span> / Lead Event Coordinator, TECH HACKATHON 2024
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 (Centerpiece) -->
+                <div class="brutal-card p-8 bg-purpose-secondary text-purpose-accent transform scale-105 shadow-2xl">
+                    <p class="text-3xl mb-4 font-heading leading-tight italic">
+                        "Finally, a certificate generator that doesn't hold my data hostage. The CSV mapping is intuitive, and the download speed is frankly terrifying. Excellent work."
+                    </p>
+                    <div class="border-t-2 border-purpose-primary mt-4 pt-4 text-sm font-mono text-purpose-accent">
+                        <span class="font-bold text-purpose-primary">DR. V. SINGH</span> / Director of E-Learning, GLOBAL INSTITUTE
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="brutal-card p-8 bg-purpose-surface">
+                    <p class="text-3xl mb-4 text-purpose-secondary font-heading leading-tight italic">
+                        "We run 50+ online courses. Watermarks and subscription limits from other tools were killing us. Certfy.Me provides clean, batch PNGs, every time. Zero friction."
+                    </p>
+                    <div class="border-t-2 border-purpose-primary mt-4 pt-4 text-sm font-mono text-text-secondary">
+                        <span class="font-bold text-text-primary">MIKE T.</span> / Operations Manager, SKILLUP ACADEMY
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Call to Action Block (Most Aggressive) -->
+    <section class="bg-purpose-primary py-16 lg:py-24 border-t-8 border-b-8 border-purpose-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-7xl sm:text-8xl brutal-heading text-purpose-secondary mb-4 leading-none">
+                <span class="block">STOP PAYING.</span> 
+                <span class="block text-white">START GENERATING.</span>
+            </h2>
+            <p class="text-2xl font-mono text-text-primary max-w-4xl mx-auto mb-10 tracking-widest font-bold">
+                The only plan available is the FREE plan. Access full, unlimited batch generation now.
+            </p>
+            <a href="/app" class="brutal-btn inline-flex items-center justify-center px-16 py-6 text-4xl font-bold rounded-none !bg-purpose-secondary !text-purpose-primary !border-4 !border-purpose-primary !shadow-[8px_8px_0_0_#FBFAF5]">
+                ACCESS THE EDITOR NOW &gt;&gt;
+            </a>
+        </div>
+    </section>
+    <!-- Meet the Engineer Section -->
+<section class="py-20 lg:py-28 bg-purpose-surface border-t-4 border-purpose-secondary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+        <h2 class="text-5xl sm:text-6xl brutal-heading text-purpose-secondary mb-10">
+            MEET THE ENGINEER
+        </h2>
+
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-10">
+
+            <!-- Image Frame -->
+            <div class="brutal-card p-4 rounded-none w-72 h-96 flex items-center justify-center overflow-hidden">
+                <img src="/me.jpg" alt="Engineer Photo" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Text About You -->
+            <div class="max-w-xl text-left">
+                <h3 class="text-4xl font-heading text-purpose-primary mb-4 leading-tight">
+                    SWASTIK MANNA
+                </h3>
+                <p class="text-lg text-text-secondary font-mono leading-relaxed">
+                    I am Swastik Manna, a passionate 2nd-year B.Tech student in Computer Science 
+                    Engineering at the University of Engineering and Management, Kolkata. I created 
+                    <span class="font-bold text-purpose-secondary">Certfy.Me</span> with the vision of 
+                    eliminating complexity from certificate generation and bringing high-speed, 
+                    open-source tooling to everyone — students, organizers, and creators alike.
+                </p>
+
+                <p class="mt-6 text-md text-text-primary font-mono">
+                    My goal is to engineer tools that combine **speed**, **precision**, and 
+                    **freedom**, empowering users without paywalls or limitations.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- Footer: Minimal and Raw -->
+    <footer class="py-8 bg-purpose-background border-t-4 border-purpose-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-text-secondary">
+            <p class="mb-2 sm:mb-0">MADE FOR EFFICIENCY. &copy; 2025 <span class="text-certfy-color font-bold">CERTFY</span><span class="text-me-color font-bold">.ME</span></p>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-purpose-primary transition duration-100 border-r border-text-secondary pr-4">LICENSE</a>
+                <a href="#" class="hover:text-purpose-primary transition duration-100 border-r border-text-secondary pr-4">PRIVACY (ZERO DATA)</a>
+                <a href="#" class="hover:text-purpose-primary transition duration-100">GITHUB</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
